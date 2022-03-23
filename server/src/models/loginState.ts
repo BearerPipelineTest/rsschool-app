@@ -10,6 +10,10 @@ export class LoginState {
   @Index()
   createdDate: number;
 
+  @Index()
+  @Column({ nullable: true })
+  userId: number;
+
   @Column({ type: 'simple-json' })
   data: LoginData;
 }
