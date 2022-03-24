@@ -123,7 +123,7 @@ export class AuthService {
   public getLoginStateByUserId(id: number, sinceMunites: number = 1) {
     return this.authRepository.findOne({
       where: {
-        id,
+        userId: id,
         createdDate: MoreThanOrEqual(dayjs().subtract(sinceMunites, 'minute').toISOString()),
       },
       order: {
